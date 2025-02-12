@@ -2,12 +2,35 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            document.body.appendChild(heart);
+            
+            const startLeft = Math.random() * window.innerWidth;
+            const duration = Math.random() * 3 + 2;
+            const size = Math.random() * 20 + 10;
+            
+            heart.style.left = `${startLeft}px`;
+            heart.style.fontSize = `${size}px`;
+            heart.style.animationDuration = `${duration}s`;
+            heart.style.color = '#ff69b4';
+            
+            setTimeout(() => {
+                heart.remove();
+            }, duration * 1000);
+        }
+        
+        setInterval(createHeart, 200);
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Program for my crush</title>
 </head>
 <body>
-    <div class="birthdayCard">
+    <div class="valentinesCard">
         <div class="cardFront"><h3 class="happy">To the Prettiest Woman I Know </h3>
             <img src="BEAUTY.jpg" alt="Beauty" class="front-image">
             <img src="HOME.jpg" alt="Home" class="back-image">
@@ -17,8 +40,7 @@
             <h3 class="back">Will You be my Valentines?</h3>
             <p>Dear Love Love,</p>
             <p>From the moment you became part of my life, every day has felt like Valentine’s Day. Your smile, your kindness, and your love make my world brighter. So today, I want to ask—will you be my Valentine? Not just for today, but for always.</p>
-            <p class="name">Forevery yours</p>
-            <p class="name">Labfey</p>
+            <p class="name">Te amo mucho, mi amor</p>
 
         </div>
     </div>

@@ -6,7 +6,7 @@ body {
     background-color: #C3195D;
   }
   
-  .birthdayCard {
+  .valentinesCard {
     position: relative;
     width: 300px;
     height:450px;
@@ -16,16 +16,16 @@ body {
     transition: 1s;
   }
   
-  .birthdayCard:hover {
+  .valentinesCard:hover {
     transform: perspective(2500px) rotate(5deg);
     box-shadow: inset 100px 20px 100px rgba(0,0,0,.2), 0 10px 100px rgba(0,0,0,0.5);
   }
   
-  .birthdayCard:hover .cardFront {
+  .valentinesCard:hover .cardFront {
     transform: rotateY(-160deg); 
   }
   
-  .birthdayCard:hover .happy {
+  .valentinesCard:hover .happy {
     visibility:hidden; 
   }
 
@@ -78,11 +78,12 @@ body {
     color: #333;
   }
   
-  .name {
+  .cardInside .name {
     position: absolute;
-    left:150px;
-    top:200px;
+    left:50%;
+    bottom:20px;
     color: #333;
+    transform: translateX(-50%);
   }
   
   .back {
@@ -104,10 +105,22 @@ body {
     height: auto; 
 }
 
-.birthdayCard:hover .cardFront .front-image {
+.valentinesCard:hover .cardFront .front-image {
     display: none; 
 }
 
-.birthdayCard:hover .cardFront .back-image {
+.valentinesCard:hover .cardFront .back-image {
     display: block; 
+}
+
+.heart {
+  position: absolute;
+  font-size: 24px;
+  animation: fall linear infinite;
+  top: 0%;
+}
+@keyframes fall {
+  to {
+      transform: translateY(100vh);
+  }
 }
